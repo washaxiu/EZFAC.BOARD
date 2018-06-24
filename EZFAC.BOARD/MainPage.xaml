@@ -95,28 +95,28 @@
             <TextBox Background="Green" FontSize="25" Text=" 09" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
         <Border Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="1">
-            <TextBox Background="Green" FontSize="25" Text=" 10" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="2" Grid.Column="11" Grid.ColumnSpan="1">
-            <TextBox Background="Green" FontSize="25" Text=" 11" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="2" Grid.Column="12" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 12" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="2" Grid.Column="13" Grid.ColumnSpan="1">
+        <Border Grid.Row="2" Grid.Column="11" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 13" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="2" Grid.Column="14" Grid.ColumnSpan="1">
+        <Border Grid.Row="2" Grid.Column="12" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 14" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="2" Grid.Column="15" Grid.ColumnSpan="1">
+        <Border Grid.Row="2" Grid.Column="13" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 15" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="2" Grid.Column="16" Grid.ColumnSpan="1">
+        <Border Grid.Row="2" Grid.Column="14" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 16" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="2" Grid.Column="17" Grid.ColumnSpan="1">
+        <Border Grid.Row="2" Grid.Column="15" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 17" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="16" Grid.ColumnSpan="1">
+            <TextBox Background="Green" FontSize="25" Text=" 18" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="17" Grid.ColumnSpan="1">
+            <TextBox Background="Green" FontSize="25" Text=" 19" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
         <Border Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1">
             <TextBlock FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
@@ -169,7 +169,7 @@
         <Border Grid.Row="3" Grid.Column="17" Grid.ColumnSpan="1">
             <TextBlock FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
         </Border>
-        
+
         <Border Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
@@ -198,28 +198,28 @@
             <TextBox Background="Green" FontSize="25" Text=" 09" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
         <Border Grid.Row="4" Grid.Column="10" Grid.ColumnSpan="1">
-            <TextBox Background="Green" FontSize="25" Text=" 10" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="4" Grid.Column="11" Grid.ColumnSpan="1">
-            <TextBox Background="Green" FontSize="25" Text=" 11" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="4" Grid.Column="12" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 12" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="4" Grid.Column="13" Grid.ColumnSpan="1">
+        <Border Grid.Row="4" Grid.Column="11" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 13" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="4" Grid.Column="14" Grid.ColumnSpan="1">
+        <Border Grid.Row="4" Grid.Column="12" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 14" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="4" Grid.Column="15" Grid.ColumnSpan="1">
+        <Border Grid.Row="4" Grid.Column="13" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 15" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="4" Grid.Column="16" Grid.ColumnSpan="1">
+        <Border Grid.Row="4" Grid.Column="14" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 16" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="4" Grid.Column="17" Grid.ColumnSpan="1">
+        <Border Grid.Row="4" Grid.Column="15" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 17" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="16" Grid.ColumnSpan="1">
+            <TextBox Background="Green" FontSize="25" Text=" 18" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="17" Grid.ColumnSpan="1">
+            <TextBox Background="Green" FontSize="25" Text=" 19" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
         <Border Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1">
             <TextBlock FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
@@ -290,12 +290,7 @@
         <Border Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 06" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="1">
-            <TextBox Background="Green" FontSize="25" Text=" 07" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="6" Grid.Column="8" Grid.ColumnSpan="1">
-            <TextBox Background="Green" FontSize="25" Text=" 08" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
+       
         <Border Grid.Row="6" Grid.Column="10" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
@@ -314,12 +309,7 @@
         <Border Grid.Row="6" Grid.Column="15" Grid.ColumnSpan="1">
             <TextBox Background="Green" FontSize="25" Text=" 06" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="6" Grid.Column="16" Grid.ColumnSpan="1">
-            <TextBox Background="Green" FontSize="25" Text=" 07" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="6" Grid.Column="17" Grid.ColumnSpan="1">
-            <TextBox Background="Green" FontSize="25" Text=" 08" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
+       
         <Border Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1">
             <TextBlock FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
         </Border>
@@ -338,13 +328,8 @@
         <Border Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="1">
             <TextBlock FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
         </Border>
-        <Border Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="1">
-            <TextBlock FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="7" Grid.Column="8" Grid.ColumnSpan="1">
-            <TextBlock FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
        
+
         <Border Grid.Row="7" Grid.Column="10" Grid.ColumnSpan="1">
             <TextBlock FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
         </Border>
@@ -363,19 +348,13 @@
         <Border Grid.Row="7" Grid.Column="15" Grid.ColumnSpan="1">
             <TextBlock FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
         </Border>
-        <Border Grid.Row="7" Grid.Column="16" Grid.ColumnSpan="1">
-            <TextBlock FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="7" Grid.Column="17" Grid.ColumnSpan="1">
-            <TextBlock FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
         <Border Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="9" Background="#0099CC">
             <TextBlock FontSize="15" Text="熔解炉/返回料输送线/液位感知/氮气发生装置/机械手信号/冷冻机/油烟机/集尘机/离行剂供给机" VerticalAlignment="Center"></TextBlock>
         </Border>
         <Border Grid.Row="8" Grid.Column="9" Grid.ColumnSpan="9" Background="#FFF32828">
             <TextBlock VerticalAlignment="Center"></TextBlock>
         </Border>
-        
+
         <Border Grid.Row="8" Grid.Column="9" Grid.ColumnSpan="1" Margin="0,8,0,0">
             <TextBlock Text="工位" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         </Border>

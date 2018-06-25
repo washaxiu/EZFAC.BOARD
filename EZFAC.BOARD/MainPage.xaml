@@ -53,16 +53,16 @@
             <TextBlock FontSize="20" Text="  压铸线" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Left"/>
         </Border>
         <Border Grid.Row="2" Grid.Column="0" Grid.RowSpan="1">
-            <TextBlock FontSize="30" Text="A" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center" />
+            <TextBlock FontSize="30" Text="A" Margin="0,0,0,8" VerticalAlignment="Bottom" FontFamily="Segoe UI Black" HorizontalAlignment="Center" />
         </Border>
         <Border Grid.Row="4" Grid.Column="0" Grid.RowSpan="1">
-            <TextBlock FontSize="30" Text="B" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <TextBlock FontSize="30" Margin="0,0,0,8" Text="B" VerticalAlignment="Bottom" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="6" Grid.Column="0" Grid.RowSpan="1">
-            <TextBlock FontSize="30" Text="C" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <TextBlock Margin="0,0,0,8" FontSize="30" Text="C" VerticalAlignment="Bottom" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="6" Grid.Column="9" Grid.RowSpan="1">
-            <TextBlock FontSize="30" Text="D" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <TextBlock Margin="0,0,0,8" FontSize="30" Text="D" VerticalAlignment="Bottom" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1">
             <TextBox    HorizontalAlignment="Center"  VerticalAlignment="Top" BorderThickness="0" IsReadOnly="True"></TextBox>

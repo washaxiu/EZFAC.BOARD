@@ -76,10 +76,10 @@ namespace EZFAC.BOARD
             getTimer = new DispatcherTimer();
             getTimer.Interval = new TimeSpan(0, 0, 10);
             getTimer.Tick += GetTimer_Tick;
-            getTimer.Start();
+           getTimer.Start();
 
             // 加载异常信息列表
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
             {
                 lvFiles.Items.Add(new
                 {
@@ -219,7 +219,6 @@ namespace EZFAC.BOARD
             {
                 color = gray;
             }
-            string GW = null, WT = null, FSSJ = null, ZT = null;
             string[] nameInfo = name.Split('-');
             int num = 0;
             if (nameInfo[0] == "压轴线")
@@ -369,25 +368,23 @@ namespace EZFAC.BOARD
 
             if (currentStatus == "r")
             {
-                GW = name;
-                WT = "错误";
-                FSSJ = recordTime;
-                ZT = "错误";
+                lvFiles.Items.Add(new
+                {
+                    GW = name,
+                    WT = "错误",
+                    FSSJ = recordTime,
+                    ZT = "错误"
+                });
             }else if (currentStatus == "o")
             {
-                GW = name;
-                WT = "停机";
-                FSSJ = recordTime;
-                ZT = "停机";
-            }
-
-            lvFiles.Items.Add(new
-            {
-                GW = GW,
-                WT = WT,
-                FSSJ = FSSJ,
-                ZT = ZT
-            });
+                lvFiles.Items.Add(new
+                {
+                    GW = name,
+                    WT = "停机",
+                    FSSJ = recordTime,
+                    ZT = "停机"
+                });
+            } 
         }
 
         private int getNum(string str)

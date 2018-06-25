@@ -76,8 +76,8 @@ namespace EZFAC.BOARD
             getTimer = new DispatcherTimer();
             getTimer.Interval = new TimeSpan(0, 0, 10);
             getTimer.Tick += GetTimer_Tick;
-           getTimer.Start();
-
+            getTimer.Start();
+        /*
             // 加载异常信息列表
             for (int i = 0; i < 6; i++)
             {
@@ -90,7 +90,7 @@ namespace EZFAC.BOARD
                 });
             }
          //   getUserList();
-          //  getContent();
+          //  getContent();*/
         }
 
         private void DispatcherTimer_Tick(object sender, object e)
@@ -161,7 +161,7 @@ namespace EZFAC.BOARD
                             }
                             else if ("recordtime".Equals(keyAndValue[0].Trim()) || keyAndValue[0].Trim() == "recordtime")
                             {
-                                recordTime = keyAndValue[1].Trim();
+                                recordTime = keyAndValue[1].Trim()+":"+ keyAndValue[2].Trim()+ ":" + keyAndValue[3].Trim();
                             }
                         }
                         // 获取的信息回填

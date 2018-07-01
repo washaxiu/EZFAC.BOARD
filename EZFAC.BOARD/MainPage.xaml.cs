@@ -35,17 +35,17 @@ namespace EZFAC.BOARD
         private SolidColorBrush yellow = new SolidColorBrush(Colors.Yellow);
         public string httpUrl = "http://192.168.2.110:8800";
 
-        public string[] deviceName = { "LXJ0001", "JCJ0001", "JCJ0002", "YYJ0001", "YYJ0002", "LDJ0001", "LDJ0002", "LDJ0003",
-                                       "JXS0001", "JXS0002", "DQFS001", "YWGZ001", "YWGZ002", "YWGZ003", "YWGZ004", "HLJ0001", "HLJ0002", "HLJ0003",
+        public string[] deviceName = { "LXJ0001", "LXJ0002", "LXJ0003","JCJ0001", "JCJ0002", "YYJ0001", "YYJ0002", "LDJ0001", "LDJ0002", "LDJ0003",
+                                       "JXS0001", "JXS0002", "DQFS001", "YWGZ001", "YWGZ002", "HLJ0001", "HLJ0002", "HLJ0003",
                                        "RJL0001", "RJL0002", "RJL0003", "RJL0004", "YZA0001", "YZA0002", "YZA0003", "YZA0004", "YZA0005", "YZA0006",
                                        "YZA0007", "YZA0008", "YZA0009", "YZA0012", "YZA0013", "YZA0014", "YZA0015", "YZA0016", "YZA0017", "YZA0018",
                                        "YZA0019", "YZB0001", "YZB0002", "YZB0003", "YZB0004", "YZB0005", "YZB0006", "YZB0007", "YZB0008", "YZB0009",
                                        "YZB0012", "YZB0013", "YZB0014", "YZB0015", "YZB0016", "YZB0017", "YZB0018", "YZB0019", "YZC0001", "YZC0002",
                                        "YZC0003", "YZC0004", "YZC0005", "YZC0006", "YZD0001", "YZD0002", "YZD0003", "YZD0004", "YZD0005", "YZD0006"};
 
-        public string[] deviceCnm = {"离型剂供给机-01", "集尘机-01", "集尘机-02", "油烟机-01", "油烟机-02", "冷冻机-01",
+        public string[] deviceCnm = {"离型剂供给机-01","离型剂供给机-02","离型剂供给机-03", "集尘机-01", "集尘机-02", "油烟机-01", "油烟机-02", "冷冻机-01",
                                        "冷冻机-02", "冷冻机-03","机械手信号-01", "机械手信号-02" ,"氮气发生装置-01","液位感知-01", "液位感知-02",
-                                       "液位感知-03", "液位感知-04" ,"回料机-01", "回料机-02", "回料机-03" ,"溶解炉-01", "溶解炉-02", "溶解炉-03", "溶解炉-04" ,
+                                       "回料机-01", "回料机-02", "回料机-03" ,"溶解炉-01", "溶解炉-02", "溶解炉-03", "溶解炉-04" ,
                                        "压轴线-A01", "压轴线-A02", "压轴线-A03", "压轴线-A04", "压轴线-A05", "压轴线-A06", "压轴线-A07", "压轴线-A08",
                                        "压轴线-A09", "压轴线-A12", "压轴线-A13", "压轴线-A14", "压轴线-A15", "压轴线-A16", "压轴线-A17", "压轴线-A18",
                                        "压轴线-A19","压轴线-B01", "压轴线-B02", "压轴线-B03", "压轴线-B04", "压轴线-B05", "压轴线-B06", "压轴线-B07",
@@ -266,14 +266,26 @@ namespace EZFAC.BOARD
                 num = getNum(nameInfo[1]);
                 if (nameInfo[0] == "离型剂供给机")
                 {
-                    M01.Background = color;
+                    if (num == 1)
+                    {
+                        M01.Background = color;
+                    }
+                    else if (num == 2)
+                    {
+                        M02.Background = color;
+                    }
+                    else
+                    {
+                        M03.Background = color;
+                    }
                 }
                 else if (nameInfo[0] == "集尘机")
                 {
-                    if(num==1)
+                    if (num == 1)
                     {
                         L01.Background = color;
-                    }else
+                    }
+                    else
                     {
                         L02.Background = color;
                     }
@@ -283,7 +295,8 @@ namespace EZFAC.BOARD
                     if (num == 1)
                     {
                         K01.Background = color;
-                    }else
+                    }
+                    else
                     {
                         K02.Foreground = color;
                     }
@@ -293,10 +306,12 @@ namespace EZFAC.BOARD
                     if (num == 1)
                     {
                         J01.Background = color;
-                    }else if (num == 2)
+                    }
+                    else if (num == 2)
                     {
                         J02.Background = color;
-                    }else
+                    }
+                    else
                     {
                         J03.Background = color;
                     }
@@ -306,7 +321,8 @@ namespace EZFAC.BOARD
                     if (num == 1)
                     {
                         I01.Background = color;
-                    }else
+                    }
+                    else
                     {
                         I02.Background = color;
                     }
@@ -321,17 +337,9 @@ namespace EZFAC.BOARD
                     {
                         G01.Background = color;
                     }
-                    else if (num == 2)
-                    {
-                        G02.Background = color;
-                    }
-                    else if (num == 3)
-                    {
-                        G03.Background = color;
-                    }
                     else
                     {
-                        G04.Background = color;
+                        G02.Background = color;
                     }
                 }
                 else if (nameInfo[0] == "回料机")
@@ -339,9 +347,14 @@ namespace EZFAC.BOARD
                     if (num == 1)
                     {
                         F01.Background = color;
-                    }else
+                    }
+                    else if (num == 2)
                     {
                         F02.Background = color;
+                    }
+                    else
+                    {
+                        F03.Background = color;
                     }
                 }
                 else if (nameInfo[0] == "溶解炉")

@@ -426,18 +426,19 @@
         <Border Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="1">
             <TextBox Name="E03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-        <Border Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="1">
-            <TextBox Name="G03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        <Border Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="1">
+            <TextBox Name="F03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
+
         <Border Grid.Row="11" Grid.Column="5" Grid.ColumnSpan="1">
             <TextBox Name="J03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
-
+        <Border Grid.Row="11" Grid.Column="8" Grid.ColumnSpan="1">
+            <TextBox Name="M03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        </Border>
+        
         <Border Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="1">
             <TextBox Name="E04" Background="Green" FontSize="25" Text=" 04" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="1">
-            <TextBox Name="G04" Background="Green" FontSize="25" Text=" 04" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
         </Border>
 
         <Border  Grid.Row="8" Grid.Column="9" Grid.RowSpan="5" Grid.ColumnSpan="2" BorderThickness="1,0,0,0" BorderBrush="Black"></Border>

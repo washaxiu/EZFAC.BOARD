@@ -29,11 +29,14 @@ namespace EZFAC.BOARD
         DispatcherTimer dispatcherTimer;
         DispatcherTimer getTimer;
         Dictionary<string, string> dic;
-        private SolidColorBrush red = new SolidColorBrush(Colors.Red);
-        private SolidColorBrush gray = new SolidColorBrush(Colors.Gray);
-        private SolidColorBrush green = new SolidColorBrush(Colors.Green);
-        private SolidColorBrush yellow = new SolidColorBrush(Colors.Yellow);
-        public string httpUrl = "http://192.168.2.110:8800";
+        private SolidColorBrush red = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
+        private SolidColorBrush textRed = new SolidColorBrush(Color.FromArgb(255, 255, 204, 204));
+        private SolidColorBrush gray = new SolidColorBrush(Color.FromArgb(255, 102, 102, 102));
+        private SolidColorBrush textGray = new SolidColorBrush(Color.FromArgb(255, 188, 188, 188));
+        private SolidColorBrush green = new SolidColorBrush(Color.FromArgb(255, 0, 204, 0));
+        private SolidColorBrush textGreen = new SolidColorBrush(Color.FromArgb(255, 204, 255, 102));
+
+        public string httpUrl = "http://192.168.1.110:8800";
 
         public string[] deviceName = { "LXJ0001", "LXJ0002", "LXJ0003","JCJ0001", "JCJ0002", "YYJ0001", "YYJ0002", "LDJ0001", "LDJ0002", "LDJ0003",
                                        "JXS0001", "JXS0002", "DQFS001", "YWGZ001", "YWGZ002", "HLJ0001", "HLJ0002", "HLJ0003",
@@ -53,6 +56,10 @@ namespace EZFAC.BOARD
                                        "压轴线-B18", "压轴线-B19","压轴线-C01", "压轴线-C02", "压轴线-C03", "压轴线-C04", "压轴线-C05", "压轴线-C06",
                                        "压轴线-D01", "压轴线-D02", "压轴线-D03", "压轴线-D04", "压轴线-D05", "压轴线-D06" };
         Random random = new Random();
+        private int YZgreenCount = 0, YZredCount = 0, YZgrayCount = 0;
+        private int FZgreenCount = 0, FZredCount = 0, FZgrayCount = 0;
+        private int YZtotal = 46, FZtotal = 22, quantityToal = 0;
+        private string message = null;
 
         public MainPage()
         {
@@ -71,26 +78,37 @@ namespace EZFAC.BOARD
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Tick += DispatcherTimer_Tick;
             dispatcherTimer.Start();
-
             // 数据获取 定时器
             getTimer = new DispatcherTimer();
             getTimer.Interval = new TimeSpan(0, 0, 10);
             getTimer.Tick += GetTimer_Tick;
             getTimer.Start();
-        /*
-            // 加载异常信息列表
-            for (int i = 0; i < 6; i++)
+      
+          /*  // 加载异常信息列表
+            for (int i = 0; i < 3; i++)
             {
                 lvFiles.Items.Add(new
                 {
                     GW = "压轴线A-01"+i,
-                    WT = "停机",
-                    FSSJ = "2018-06-24",
-                    ZT = "关机"
+                    WT = "设备停机",
+                    FSSJ = "2018-06-24"
                 });
             }
-         //   getUserList();
-          //  getContent();*/
+             //   getUserList();
+              //  getContent();*/
+            // getYZInfo();
+        }
+
+        private async void getYZInfo()
+        {
+
+            ContentDialog dialog = new ContentDialog()
+            {
+                FontSize = 32d,
+                Content = B08.Background.ToString(),
+                PrimaryButtonText = "确定",
+            };
+            await dialog.ShowAsync();
         }
 
         private void DispatcherTimer_Tick(object sender, object e)
@@ -105,17 +123,8 @@ namespace EZFAC.BOARD
         }
 
         private async void getContent()
-        {
-            ContentDialog dialog = new ContentDialog()
-            {
-                FontSize = 32d,
-                Content = "",
-                PrimaryButtonText = "确定",
-                VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Center,
-                HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Stretch
-            };
-            
-            lvFiles.Items.Clear();
+        {  
+           
             string url = httpUrl + "/get-deviceConfig?uuid=" + random.Next();
             var httpClient = new HttpClient();
             var resourceUri = new Uri(url);
@@ -124,11 +133,13 @@ namespace EZFAC.BOARD
             try
             {
                 content = await httpClient.GetStringAsync(resourceUri);
-                
                 lvFiles.Items.Clear();
                 if (content != null)
                 {
-                    
+                    lvFiles.Items.Clear();
+                    YZredCount = 0; YZgrayCount = 0;
+                    FZredCount = 0; FZgrayCount = 0;
+                    quantityToal = 0;
                     string[] detail = content.Split('}'), rowDetails = null, keyAndValue = null;
                     string rowContent = null;
                     int index = 0;
@@ -149,6 +160,11 @@ namespace EZFAC.BOARD
                             if ("equipment_id".Equals(keyAndValue[0].Trim()) || keyAndValue[0].Trim() == "equipment_id")
                             {
                                 equipmentId = keyAndValue[1].Trim();
+                                if (!dic.ContainsKey(equipmentId))
+                                {
+                                    name = null;
+                                    break;
+                                }
                                 name = dic[equipmentId];
                             }
                             else if ("current_status".Equals(keyAndValue[0].Trim()) || keyAndValue[0].Trim() == "current_status")
@@ -158,6 +174,9 @@ namespace EZFAC.BOARD
                             else if ("product_quantity".Equals(keyAndValue[0].Trim()) || keyAndValue[0].Trim() == "product_quantity")
                             {
                                 produceQuantity = keyAndValue[1].Trim();
+                                int quantity = Convert.ToInt32(produceQuantity);
+                                quantityToal += quantity;
+                                produceQuantity = quantity.ToString("0000");
                             }
                             else if ("recordtime".Equals(keyAndValue[0].Trim()) || keyAndValue[0].Trim() == "recordtime")
                             {
@@ -165,8 +184,20 @@ namespace EZFAC.BOARD
                             }
                         }
                         // 获取的信息回填
-                        setDataInfo(name, currentStatus, produceQuantity, recordTime);
+                        if (name != null)
+                        {
+                            setDataInfo(name, currentStatus, produceQuantity, recordTime);
+                        }
                     }
+                    YZgreenCount = YZtotal - YZgrayCount - YZredCount;
+                    FZgreenCount = FZtotal - FZgrayCount - FZredCount;
+                    YZgreenTotal.Content = YZgreenCount.ToString() + "台";
+                    YZredTotal.Content = YZredCount.ToString() + "台";
+                    YZgrayTotal.Content = YZgrayCount.ToString() + "台";
+                    FZgreenTotal.Content = FZgreenCount.ToString() + "台";
+                    FZredTotal.Content = FZredCount.ToString() + "台";
+                    FZgrayTotal.Content = FZgrayCount.ToString() + "台";
+                    total.Content = quantityToal;
                 }
             }
             catch (Exception ex)
@@ -185,56 +216,67 @@ namespace EZFAC.BOARD
 
         private void setDataInfo(string name, string currentStatus, string produceQuantity, string recordTime)
         {
-            TextBox[] A = { A01, A02, A03, A04, A05, A06, A07, A08,
+            Button[] A = { A01, A02, A03, A04, A05, A06, A07, A08,
                              A09, A12, A13, A14, A15, A16, A17, A18,
                              A19};
-            TextBox[] B = { B01, B02, B03, B04, B05, B06, B07, B08,
+            Button[] B = { B01, B02, B03, B04, B05, B06, B07, B08,
                              B09, B12, B13, B14, B15, B16, B17, B18,
                              B19};
-            TextBox[] C = { C01, C02, C03, C04, C05, C06};
-            TextBox[] D = { D01, D02, D03, D04, D05, D06};
+            Button[] C = { C01, C02, C03, C04, C05, C06};
+            Button[] D = { D01, D02, D03, D04, D05, D06};
 
-            TextBlock[] AA = { A_01, A_02, A_03, A_04, A_05, A_06, A_07, A_08,
+            Button[] AA = { A_01, A_02, A_03, A_04, A_05, A_06, A_07, A_08,
                                A_09, A_12, A_13, A_14, A_15, A_16, A_17, A_18,
                                A_19};
-            TextBlock[] BB = { B_01, B_02, B_03, B_04, B_05, B_06, B_07, B_08,
+            Button[] BB = { B_01, B_02, B_03, B_04, B_05, B_06, B_07, B_08,
                                B_09, B_12, B_13, B_14, B_15, B_16, B_17, B_18,
                                B_19};
-            TextBlock[] CC = { C_01, C_02, C_03, C_04, C_05, C_06};
-            TextBlock[] DD = { D_01, D_02, D_03, D_04, D_05, D_06};
+            Button[] CC = { C_01, C_02, C_03, C_04, C_05, C_06};
+            Button[] DD = { D_01, D_02, D_03, D_04, D_05, D_06};
 
-            SolidColorBrush color = null;
-            if (currentStatus == "r")
+            SolidColorBrush color = null,textColor = null;
+            if (currentStatus == "r" || currentStatus == "R")
             {
                 color = red;
-            }else if(currentStatus == "y")
-            {
-                color = yellow;
+                textColor = textRed;
             }
-            else if (currentStatus == "g")
-            {
-                color = green;
-            }
-            else if (currentStatus == "o")
+            else if (currentStatus == "o" || currentStatus == "O")
             {
                 color = gray;
+                textColor = textGray;
+            }
+            else
+            {
+                color = green;
+                textColor = textGreen;
             }
             string[] nameInfo = name.Split('-');
             int num = 0;
             if (nameInfo[0] == "压轴线")
             {
+                message = name;
+                if (currentStatus == "r" || currentStatus == "R")
+                {
+                    YZredCount++;
+                }
+                else if (currentStatus == "o" || currentStatus == "O")
+                {
+                    YZgrayCount++;
+                }
                 num = getNum(nameInfo[1].Substring(1));
                 if (nameInfo[1][0] == 'A')
                 {
                     if(num<=9)
                     {
                         A[num - 1].Background = color;
-                        AA[num - 1].Text = produceQuantity;
+                        AA[num - 1].Background = textColor;
+                        AA[num - 1].Content = produceQuantity;
                     }
                     else
                     {
                         A[num - 3].Background = color;
-                        AA[num - 3].Text = produceQuantity;
+                        AA[num - 3].Background = textColor;
+                        AA[num - 3].Content = produceQuantity;
                     }
                 }
                 else if (nameInfo[1][0] == 'B')
@@ -242,40 +284,55 @@ namespace EZFAC.BOARD
                     if (num <= 9)
                     {
                         B[num - 1].Background = color;
-                        BB[num - 1].Text = produceQuantity;
+                        BB[num - 1].Background = textColor;
+                        BB[num - 1].Content = produceQuantity;
                     }
                     else
                     {
                         B[num - 3].Background = color;
-                        BB[num - 3].Text = produceQuantity;
+                        BB[num - 3].Background = textColor;
+                        BB[num - 3].Content = produceQuantity;
                     }
                 }
                 else if (nameInfo[1][0] == 'C')
                 {
                     C[num - 1].Background = color;
-                    CC[num - 1].Text = produceQuantity;
+                    CC[num - 1].Background = textColor;
+                    CC[num - 1].Content = produceQuantity;
                 }
                 else if (nameInfo[1][0] == 'D')
                 {
                     D[num - 1].Background = color;
-                    DD[num - 1].Text = produceQuantity;
+                    DD[num - 1].Background = textColor;
+                    DD[num - 1].Content = produceQuantity;
                 }
             }
             else
             {
+                if (currentStatus == "r" || currentStatus == "R")
+                {
+                    FZredCount++;
+                }
+                else if (currentStatus == "o" || currentStatus == "O")
+                {
+                    FZgrayCount++;
+                }
                 num = getNum(nameInfo[1]);
                 if (nameInfo[0] == "离型剂供给机")
                 {
                     if (num == 1)
                     {
+                        message = M01.Content.ToString();
                         M01.Background = color;
                     }
                     else if (num == 2)
                     {
+                        message = M02.Content.ToString();
                         M02.Background = color;
                     }
                     else
                     {
+                        message = M03.Content.ToString();
                         M03.Background = color;
                     }
                 }
@@ -283,10 +340,12 @@ namespace EZFAC.BOARD
                 {
                     if (num == 1)
                     {
+                        message = L01.Content.ToString();
                         L01.Background = color;
                     }
                     else
                     {
+                        message = L02.Content.ToString();
                         L02.Background = color;
                     }
                 }
@@ -294,25 +353,30 @@ namespace EZFAC.BOARD
                 {
                     if (num == 1)
                     {
+                        message = K01.Content.ToString();
                         K01.Background = color;
                     }
                     else
                     {
-                        K02.Foreground = color;
+                        message = K02.Content.ToString();
+                        K02.Background = color;
                     }
                 }
                 else if (nameInfo[0] == "冷冻机")
                 {
                     if (num == 1)
                     {
+                        message = J01.Content.ToString();
                         J01.Background = color;
                     }
                     else if (num == 2)
                     {
+                        message = J02.Content.ToString();
                         J02.Background = color;
                     }
                     else
                     {
+                        message = J03.Content.ToString();
                         J03.Background = color;
                     }
                 }
@@ -320,25 +384,30 @@ namespace EZFAC.BOARD
                 {
                     if (num == 1)
                     {
+                        message = I01.Content.ToString();
                         I01.Background = color;
                     }
                     else
                     {
+                        message = I02.Content.ToString();
                         I02.Background = color;
                     }
                 }
                 else if (nameInfo[0] == "氮气发生装置")
                 {
+                    message = H01.Content.ToString();
                     H01.Background = color;
                 }
                 else if (nameInfo[0] == "液位感知")
                 {
                     if (num == 1)
                     {
+                        message = G01.Content.ToString();
                         G01.Background = color;
                     }
                     else
                     {
+                        message = G02.Content.ToString();
                         G02.Background = color;
                     }
                 }
@@ -346,14 +415,17 @@ namespace EZFAC.BOARD
                 {
                     if (num == 1)
                     {
+                        message = F01.Content.ToString();
                         F01.Background = color;
                     }
                     else if (num == 2)
                     {
+                        message = F02.Content.ToString();
                         F02.Background = color;
                     }
                     else
                     {
+                        message = F03.Content.ToString();
                         F03.Background = color;
                     }
                 }
@@ -361,41 +433,41 @@ namespace EZFAC.BOARD
                 {
                     if (num == 1)
                     {
+                        message = E01.Content.ToString();
                         E01.Background = color;
                     }
                     else if (num == 2)
                     {
+                        message = E02.Content.ToString();
                         E02.Background = color;
                     }
                     else if (num == 3)
                     {
+                        message = E03.Content.ToString();
                         E03.Background = color;
                     }
                     else
                     {
+                        message = E04.Content.ToString();
                         E04.Background = color;
                     }
                 }
             }
-
-
-            if (currentStatus == "r")
+            if (currentStatus == "r" || currentStatus == "R")
             {
                 lvFiles.Items.Add(new
                 {
-                    GW = name,
-                    WT = "错误",
-                    FSSJ = recordTime,
-                    ZT = "错误"
+                    GW = message,
+                    WT = "设备告警",
+                    FSSJ = recordTime
                 });
-            }else if (currentStatus == "o")
+            }else if (currentStatus == "o" || currentStatus == "O")
             {
                 lvFiles.Items.Add(new
                 {
-                    GW = name,
-                    WT = "停机",
-                    FSSJ = recordTime,
-                    ZT = "停机"
+                    GW = message,
+                    WT = "设备停机",
+                    FSSJ = recordTime
                 });
             } 
         }

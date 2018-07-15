@@ -7,6 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="Gray">
+                
+            </Setter>
+        </Style>
+    </Page.Resources>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -24,429 +33,530 @@
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="62"/>
             <RowDefinition />
-            <RowDefinition Height="30"/>
-            <RowDefinition/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="35"/>
             <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="18" HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <Run FontSize="30"  Foreground="Blue" Text="Andon系统看板-系统异常" FontFamily="Segoe UI Black" FontWeight="Bold" />
+        <TextBlock Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="5" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,36,4" >
+            <Run FontSize="40"  Foreground="Black" Text="压铸线设备状态信息看板" FontFamily="Segoe UI Black" FontWeight="Bold" />
         </TextBlock>
-        <TextBlock x:Name="timetag" Grid.Row="0" Grid.Column="15" Grid.ColumnSpan="3" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalAlignment="Center" >
-            <Run FontSize="18"  Foreground="Blue" Text="2017-06-11 11:40:32" />
+        <TextBlock x:Name="timetag" Grid.Row="0" Grid.Column="12" Grid.ColumnSpan="4" Margin="0,15,10,0" HorizontalAlignment="Right" VerticalAlignment="Center" >
+            <Run FontSize="32"   Foreground="Black" Text="2017-06-11 11:40:32" />
         </TextBlock>
-        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="18"   Background="#0099CC">
-            <TextBlock FontSize="20" Text="  压铸线" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Left"/>
+
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="16"   Background="#99CCCC"></Border>
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <TextBlock FontSize="35" Foreground="#FFFFFF" Text="  压铸机稼动监视画面" VerticalAlignment="Center" FontFamily="Arial"  FontWeight="Bold"  HorizontalAlignment="Left"/>
         </Border>
-        <Border Grid.Row="2" Grid.Column="0" Grid.RowSpan="1">
-            <TextBlock FontSize="30" Text="A" Margin="0,0,0,8" VerticalAlignment="Bottom" FontFamily="Segoe UI Black" HorizontalAlignment="Center" />
+        <Border Grid.Row="1" Grid.Column="3" >
+            <Button Background="#00CC00" FontSize="25" Foreground="White"  FontWeight="Bold" Content="运转中" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
         </Border>
-        <Border Grid.Row="4" Grid.Column="0" Grid.RowSpan="1">
-            <TextBlock FontSize="30" Margin="0,0,0,8" Text="B" VerticalAlignment="Bottom" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+        <Border Grid.Row="1" Grid.Column="4" >
+            <Button Name="YZgreenTotal" Background="#FFFFFF" FontSize="25" Content="46台" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
         </Border>
-        <Border Grid.Row="6" Grid.Column="0" Grid.RowSpan="1">
-            <TextBlock Margin="0,0,0,8" FontSize="30" Text="C" VerticalAlignment="Bottom" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+        <Border Grid.Row="1" Grid.Column="5" >
+            <Button Background="#FF0000" FontSize="25" Content="告警中" Foreground="White"  FontWeight="Bold" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
         </Border>
+        <Border Grid.Row="1" Grid.Column="6" >
+            <Button Name="YZredTotal" Background="#FFFFFF" FontSize="25" Content="0台" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="7" >
+            <Button Background="#666666" FontSize="25" Content="停机中" Foreground="White"  FontWeight="Bold" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="8" >
+            <Button Name="YZgrayTotal" Background="#FFFFFF" FontSize="25" Content="0台" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="11" Grid.ColumnSpan="2">
+            <Button Background="#008000" FontSize="25" Content="今日总产量" Foreground="White"  FontWeight="Bold" Height="60" VerticalAlignment="Center" HorizontalAlignment="Right"></Button>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="13" >
+            <Button Name="total" Background="#CCFF66" FontSize="25" Content="0" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
+        </Border>
+
         <Border Grid.Row="6" Grid.Column="9" Grid.RowSpan="1">
             <TextBlock Margin="0,0,0,8" FontSize="30" Text="D" VerticalAlignment="Bottom" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
         </Border>
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1">
             <TextBox    HorizontalAlignment="Center"  VerticalAlignment="Top" BorderThickness="0" IsReadOnly="True"></TextBox>
         </Border>
-        <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1">
-            <TextBox Name="A01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        <!--压铸线A信息-->
+        <Border Grid.Row="2" Grid.Column="0">
+            <Button Name="A01" Background="#00CC00" FontSize="25" Content="A-01"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-        <Border Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1">
-            <TextBox Name="A02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        <Border Grid.Row="2" Grid.Column="1">
+            <Button Name="A02" Background="#00CC00" FontSize="25" Content="A-02"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="2">
+            <Button Name="A03" Background="#00CC00" FontSize="25" Content="A-03"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="1">
-            <TextBox Name="A03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A04" Background="#00CC00" FontSize="25" Content="A-04"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="1">
-            <TextBox Name="A04" Background="Green" FontSize="25" Text=" 04" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A05" Background="#00CC00" FontSize="25" Content="A-05"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="1">
-            <TextBox Name="A05" Background="Green" FontSize="25" Text=" 05" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A06" Background="#00CC00" FontSize="25" Content="A-06"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="1">
-            <TextBox Name="A06" Background="Green" FontSize="25" Text=" 06" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A07" Background="#00CC00" FontSize="25" Content="A-07"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="1">
-            <TextBox Name="A07" Background="Green" FontSize="25" Text=" 07" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A08" Background="#00CC00" FontSize="25" Content="A-08"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="2" Grid.Column="8" Grid.ColumnSpan="1">
-            <TextBox Name="A08" Background="Green" FontSize="25" Text=" 08" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A09" Background="#00CC00" FontSize="25" Content="A-09"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="2" Grid.Column="9" Grid.ColumnSpan="1">
-            <TextBox Name="A09" Background="Green" FontSize="25" Text=" 09" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A10" Background="#6699CC" FontSize="25" Content="A-10"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-        <Border Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="1">
-            <TextBox Name="A12" Background="Green" FontSize="25" Text=" 12" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        <Border Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="1">
+            <Button Name="A11" Background="#6699CC" FontSize="25" Content="A-11"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-        <Border Grid.Row="2" Grid.Column="11" Grid.ColumnSpan="1">
-            <TextBox Name="A13" Background="Green" FontSize="25" Text=" 13" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="2" Grid.Column="12" Grid.ColumnSpan="1">
-            <TextBox Name="A14" Background="Green" FontSize="25" Text=" 14" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="2" Grid.Column="13" Grid.ColumnSpan="1">
-            <TextBox Name="A15" Background="Green" FontSize="25" Text=" 15" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="2" Grid.Column="14" Grid.ColumnSpan="1">
-            <TextBox Name="A16" Background="Green" FontSize="25" Text=" 16" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="2" Grid.Column="15" Grid.ColumnSpan="1">
-            <TextBox Name="A17" Background="Green" FontSize="25" Text=" 17" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="2" Grid.Column="16" Grid.ColumnSpan="1">
-            <TextBox Name="A18" Background="Green" FontSize="25" Text=" 18" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="2" Grid.Column="17" Grid.ColumnSpan="1">
-            <TextBox Name="A19" Background="Green" FontSize="25" Text=" 19" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1">
-            <TextBlock Name="A_01" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1">
-            <TextBlock Name="A_02" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="1">
-            <TextBlock Name="A_03" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="1">
-            <TextBlock Name="A_04" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="1">
-            <TextBlock Name="A_05" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="1">
-            <TextBlock Name="A_06" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="7" Grid.ColumnSpan="1">
-            <TextBlock Name="A_07" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="8" Grid.ColumnSpan="1">
-            <TextBlock Name="A_08" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="9" Grid.ColumnSpan="1">
-            <TextBlock Name="A_09" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="10" Grid.ColumnSpan="1">
-            <TextBlock Name="A_12" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="11" Grid.ColumnSpan="1">
-            <TextBlock Name="A_13" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="12" Grid.ColumnSpan="1">
-            <TextBlock Name="A_14" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="13" Grid.ColumnSpan="1">
-            <TextBlock Name="A_15" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="14" Grid.ColumnSpan="1">
-            <TextBlock Name="A_16" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="15" Grid.ColumnSpan="1">
-            <TextBlock Name="A_17" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="16" Grid.ColumnSpan="1">
-            <TextBlock Name="A_18" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="3" Grid.Column="17" Grid.ColumnSpan="1">
-            <TextBlock Name="A_19" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-
         <Border Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1">
-            <TextBox Name="B01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A12" Background="#00CC00" FontSize="25" Content="A-12"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="1">
-            <TextBox Name="B02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A13" Background="#00CC00" FontSize="25" Content="A-13"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="1">
-            <TextBox Name="B03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A14" Background="#00CC00" FontSize="25" Content="A-14"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="1">
-            <TextBox Name="B04" Background="Green" FontSize="25" Text=" 04" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A15" Background="#00CC00" FontSize="25" Content="A-15"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="1">
-            <TextBox Name="B05" Background="Green" FontSize="25" Text=" 05" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A16" Background="#00CC00" FontSize="25" Content="A-16"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="1">
-            <TextBox Name="B06" Background="Green" FontSize="25" Text=" 06" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A17" Background="#00CC00" FontSize="25" Content="A-17"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="4" Grid.Column="7" Grid.ColumnSpan="1">
-            <TextBox Name="B07" Background="Green" FontSize="25" Text=" 07" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A18" Background="#00CC00" FontSize="25" Content="A-18"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="4" Grid.Column="8" Grid.ColumnSpan="1">
-            <TextBox Name="B08" Background="Green" FontSize="25" Text=" 08" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A19" Background="#00CC00" FontSize="25" Content="A-19"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="4" Grid.Column="9" Grid.ColumnSpan="1">
-            <TextBox Name="B09" Background="Green" FontSize="25" Text=" 09" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="A20" Background="#6699CC" FontSize="25" Content="A-20"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-        <Border Grid.Row="4" Grid.Column="10" Grid.ColumnSpan="1">
-            <TextBox Name="B12" Background="Green" FontSize="25" Text=" 12" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        <!--压铸线B信息-->
+        <Border Grid.Row="6" Grid.Column="0">
+            <Button Name="B01" Background="#00CC00" FontSize="25" Content="B-01"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-        <Border Grid.Row="4" Grid.Column="11" Grid.ColumnSpan="1">
-            <TextBox Name="B13" Background="Green" FontSize="25" Text=" 13" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        <Border Grid.Row="6" Grid.Column="1">
+            <Button Name="B02" Background="#00CC00" FontSize="25" Content="B-02"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-        <Border Grid.Row="4" Grid.Column="12" Grid.ColumnSpan="1">
-            <TextBox Name="B14" Background="Green" FontSize="25" Text=" 14" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="4" Grid.Column="13" Grid.ColumnSpan="1">
-            <TextBox Name="B15" Background="Green" FontSize="25" Text=" 15" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="4" Grid.Column="14" Grid.ColumnSpan="1">
-            <TextBox Name="B16" Background="Green" FontSize="25" Text=" 16" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="4" Grid.Column="15" Grid.ColumnSpan="1">
-            <TextBox Name="B17" Background="Green" FontSize="25" Text=" 17" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="4" Grid.Column="16" Grid.ColumnSpan="1">
-            <TextBox Name="B18" Background="Green" FontSize="25" Text=" 18" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="4" Grid.Column="17" Grid.ColumnSpan="1">
-            <TextBox Name="B19" Background="Green" FontSize="25" Text=" 19" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1">
-            <TextBlock Name="B_01" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="1">
-            <TextBlock Name="B_02" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="1">
-            <TextBlock Name="B_03" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="1">
-            <TextBlock Name="B_04" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="1">
-            <TextBlock Name="B_05" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="6" Grid.ColumnSpan="1">
-            <TextBlock Name="B_06" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="1">
-            <TextBlock Name="B_07" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="8" Grid.ColumnSpan="1">
-            <TextBlock Name="B_08" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="9" Grid.ColumnSpan="1">
-            <TextBlock Name="B_09" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="10" Grid.ColumnSpan="1">
-            <TextBlock Name="B_12" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="11" Grid.ColumnSpan="1">
-            <TextBlock Name="B_13" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="12" Grid.ColumnSpan="1">
-            <TextBlock Name="B_14" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="13" Grid.ColumnSpan="1">
-            <TextBlock Name="B_15" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="14" Grid.ColumnSpan="1">
-            <TextBlock Name="B_16" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="15" Grid.ColumnSpan="1">
-            <TextBlock Name="B_17" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="16" Grid.ColumnSpan="1">
-            <TextBlock Name="B_18" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="5" Grid.Column="17" Grid.ColumnSpan="1">
-            <TextBlock Name="B_19" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
-        </Border>
-        <Border Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="1">
-            <TextBox Name="C01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="1">
-            <TextBox Name="C02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        <Border Grid.Row="6" Grid.Column="2">
+            <Button Name="B03" Background="#00CC00" FontSize="25" Content="B-03"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="1">
-            <TextBox Name="C03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="B04" Background="#00CC00" FontSize="25" Content="B-04"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="1">
-            <TextBox Name="C04" Background="Green" FontSize="25" Text=" 04" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="B05" Background="#00CC00" FontSize="25" Content="B-05"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="1">
-            <TextBox Name="C05" Background="Green" FontSize="25" Text=" 05" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="B06" Background="#00CC00" FontSize="25" Content="B-06"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="1">
-            <TextBox Name="C06" Background="Green" FontSize="25" Text=" 06" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="B07" Background="#00CC00" FontSize="25" Content="B-07"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-       
+        <Border Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="1">
+            <Button Name="B08" Background="#00CC00" FontSize="25" Content="B-08"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="6" Grid.Column="8" Grid.ColumnSpan="1">
+            <Button Name="B09" Background="#00CC00" FontSize="25" Content="B-09"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="6" Grid.Column="9" Grid.ColumnSpan="1">
+            <Button Name="B10" Background="#6699CC" FontSize="25" Content="B-10"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="1">
+            <Button Name="B11" Background="#6699CC" FontSize="25" Content="B-11"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="1">
+            <Button Name="B12" Background="#00CC00" FontSize="25" Content="B-12"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="1">
+            <Button Name="B13" Background="#00CC00" FontSize="25" Content="B-13"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="1">
+            <Button Name="B14" Background="#00CC00" FontSize="25" Content="B-14"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="1">
+            <Button Name="B15" Background="#00CC00" FontSize="25" Content="B-15"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="5" Grid.ColumnSpan="1">
+            <Button Name="B16" Background="#00CC00" FontSize="25" Content="B-16"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="1">
+            <Button Name="B17" Background="#00CC00" FontSize="25" Content="B-17"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="1">
+            <Button Name="B18" Background="#00CC00" FontSize="25" Content="B-18"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="8" Grid.ColumnSpan="1">
+            <Button Name="B19" Background="#00CC00" FontSize="25" Content="B-19"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="9" Grid.ColumnSpan="1">
+            <Button Name="B20" Background="#6699CC" FontSize="25" Content="B-20"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <!--压铸线C信息-->
+        <Border Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="1">
+            <Button Name="C01" Background="#00CC00" FontSize="25" Content="C-01"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="11" Grid.ColumnSpan="1">
+            <Button Name="C02" Background="#00CC00" FontSize="25" Content="C-02"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="12" Grid.ColumnSpan="1">
+            <Button Name="C03" Background="#00CC00" FontSize="25" Content="C-03"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="13" Grid.ColumnSpan="1">
+            <Button Name="C04" Background="#00CC00" FontSize="25" Content="C-04"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="14" Grid.ColumnSpan="1">
+            <Button Name="C05" Background="#00CC00" FontSize="25" Content="C-05"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="10" Grid.ColumnSpan="1">
+            <Button Name="C06" Background="#00CC00" FontSize="25" Content="C-06"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="11" Grid.ColumnSpan="1">
+            <Button Name="C07" Background="#6699CC" FontSize="25" Content="C-07"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="12" Grid.ColumnSpan="1">
+            <Button Name="C08" Background="#6699CC" FontSize="25" Content="C-08"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="13" Grid.ColumnSpan="1">
+            <Button Name="C09" Background="#6699CC" FontSize="25" Content="C-09"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="14" Grid.ColumnSpan="1">
+            <Button Name="C10" Background="#6699CC" FontSize="25" Content="C-10"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <!--压铸线D信息-->
         <Border Grid.Row="6" Grid.Column="10" Grid.ColumnSpan="1">
-            <TextBox Name="D01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="D01" Background="#00CC00" FontSize="25" Content="D-01"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="6" Grid.Column="11" Grid.ColumnSpan="1">
-            <TextBox Name="D02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="D02" Background="#00CC00" FontSize="25" Content="D-02"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="6" Grid.Column="12" Grid.ColumnSpan="1">
-            <TextBox Name="D03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="D03" Background="#00CC00" FontSize="25" Content="D-03"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="6" Grid.Column="13" Grid.ColumnSpan="1">
-            <TextBox Name="D04" Background="Green" FontSize="25" Text=" 04" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="D04" Background="#00CC00" FontSize="25" Content="D-04"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="6" Grid.Column="14" Grid.ColumnSpan="1">
-            <TextBox Name="D05" Background="Green" FontSize="25" Text=" 05" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+            <Button Name="D05" Background="#00CC00" FontSize="25" Content="D-05"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-        <Border Grid.Row="6" Grid.Column="15" Grid.ColumnSpan="1">
-            <TextBox Name="D06" Background="Green" FontSize="25" Text=" 06" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
+        <Border Grid.Row="8" Grid.Column="10" Grid.ColumnSpan="1">
+            <Button Name="D06" Background="#00CC00" FontSize="25" Content="D-06"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-       
+        <Border Grid.Row="8" Grid.Column="11" Grid.ColumnSpan="1">
+            <Button Name="D07" Background="#6699CC" FontSize="25" Content="D-07"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="12" Grid.ColumnSpan="1">
+            <Button Name="D08" Background="#6699CC" FontSize="25" Content="D-08"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="13" Grid.ColumnSpan="1">
+            <Button Name="D09" Background="#6699CC" FontSize="25" Content="D-09"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="8" Grid.Column="14" Grid.ColumnSpan="1">
+            <Button Name="D10" Background="#6699CC" FontSize="25" Content="D-10"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <!--压铸线A产量-->
+        <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1">
+            <Button Name="A_01" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1">
+            <Button Name="A_02" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1">
+            <Button Name="A_03" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="1">
+            <Button Name="A_04" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="1">
+            <Button Name="A_05" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="1">
+            <Button Name="A_06" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="1">
+            <Button Name="A_07" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="7" Grid.ColumnSpan="1">
+            <Button Name="A_08" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="8" Grid.ColumnSpan="1">
+            <Button Name="A_09" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="9" Grid.ColumnSpan="1">
+            <Button Name="A_10" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1">
+            <Button Name="A_11" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1">
+            <Button Name="A_12" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="1">
+            <Button Name="A_13" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="1">
+            <Button Name="A_14" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="1">
+            <Button Name="A_15" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="1">
+            <Button Name="A_16" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="6" Grid.ColumnSpan="1">
+            <Button Name="A_17" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="1">
+            <Button Name="A_18" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="8" Grid.ColumnSpan="1">
+            <Button Name="A_19" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="9" Grid.ColumnSpan="1">
+            <Button Name="A_20" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <!--压铸线B产量-->
+        <Border Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="1">
+            <Button Name="B_01" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
         <Border Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1">
-            <TextBlock Name="C_01" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <Button Name="B_02" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1">
-            <TextBlock Name="C_02" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <Button Name="B_03" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="1">
-            <TextBlock Name="C_03" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <Button Name="B_04" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="1">
-            <TextBlock Name="C_04" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <Button Name="B_05" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="7" Grid.Column="5" Grid.ColumnSpan="1">
-            <TextBlock Name="C_05" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <Button Name="B_06" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="1">
-            <TextBlock Name="C_06" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <Button Name="B_07" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-       
-
+        <Border Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="1">
+            <Button Name="B_08" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="7" Grid.Column="8" Grid.ColumnSpan="1">
+            <Button Name="B_09" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="7" Grid.Column="9" Grid.ColumnSpan="1">
+            <Button Name="B_10" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="1">
+            <Button Name="B_11" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="1">
+            <Button Name="B_12" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="1">
+            <Button Name="B_13" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="1">
+            <Button Name="B_14" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="4" Grid.ColumnSpan="1">
+            <Button Name="B_15" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="5" Grid.ColumnSpan="1">
+            <Button Name="B_16" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="1">
+            <Button Name="B_17" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="1">
+            <Button Name="B_18" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="8" Grid.ColumnSpan="1">
+            <Button Name="B_19" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="9" Grid.ColumnSpan="1">
+            <Button Name="B_20" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <!--压铸线C产量-->
+        <Border Grid.Row="3" Grid.Column="10" Grid.ColumnSpan="1">
+            <Button Name="C_01" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="11" Grid.ColumnSpan="1">
+            <Button Name="C_02" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="12" Grid.ColumnSpan="1">
+            <Button Name="C_03" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="13" Grid.ColumnSpan="1">
+            <Button Name="C_04" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="14" Grid.ColumnSpan="1">
+            <Button Name="C_05" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="10" Grid.ColumnSpan="1">
+            <Button Name="C_06" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="11" Grid.ColumnSpan="1">
+            <Button Name="C_07" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="12" Grid.ColumnSpan="1">
+            <Button Name="C_08" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="13" Grid.ColumnSpan="1">
+            <Button Name="C_09" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="14" Grid.ColumnSpan="1">
+            <Button Name="C_10" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <!--压铸线D产量-->
         <Border Grid.Row="7" Grid.Column="10" Grid.ColumnSpan="1">
-            <TextBlock Name="D_01" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <Button Name="D_01" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="7" Grid.Column="11" Grid.ColumnSpan="1">
-            <TextBlock Name="D_02" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <Button Name="D_02" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="7" Grid.Column="12" Grid.ColumnSpan="1">
-            <TextBlock Name="D_03" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <Button Name="D_03" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="7" Grid.Column="13" Grid.ColumnSpan="1">
-            <TextBlock Name="D_04" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <Button Name="D_04" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
         <Border Grid.Row="7" Grid.Column="14" Grid.ColumnSpan="1">
-            <TextBlock Name="D_05" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+            <Button Name="D_05" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-        <Border Grid.Row="7" Grid.Column="15" Grid.ColumnSpan="1">
-            <TextBlock Name="D_06" FontSize="22" Text="0" Margin="0,4,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" HorizontalAlignment="Center"/>
+        <Border Grid.Row="9" Grid.Column="10" Grid.ColumnSpan="1">
+            <Button Name="D_06" Background="#CCFF66" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-        <Border Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="9" Background="#0099CC">
-            <TextBlock FontSize="20" Text="  熔解炉/返回料输送线/液位感知/氮气发生装置/机械手信号/冷冻机/油烟机/集尘机/离行剂供给机" VerticalAlignment="Center"></TextBlock>
+        <Border Grid.Row="9" Grid.Column="11" Grid.ColumnSpan="1">
+            <Button Name="D_07" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
         </Border>
-        <Border Grid.Row="8" Grid.Column="9" Grid.ColumnSpan="9" Background="#FFF32828">
+        <Border Grid.Row="9" Grid.Column="12" Grid.ColumnSpan="1">
+            <Button Name="D_08" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="13" Grid.ColumnSpan="1">
+            <Button Name="D_09" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="9" Grid.Column="14" Grid.ColumnSpan="1">
+            <Button Name="D_10" Background="#66CCCC" FontSize="20" Content="0000"  Foreground="Black" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+
+        <!--辅助设备监视画面  熔解炉/返回料输送线/液位感知/氮气发生装置/机械手信号/冷冻机/油烟机/集尘机/离行剂供给机-->
+        <Border Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="16"   Background="#99CCCC"></Border>
+        <Border Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3">
+            <TextBlock FontSize="35" Foreground="#FFFFFF" Text="  辅助设备监视画面" VerticalAlignment="Center" FontFamily="Arial"  FontWeight="Bold"  HorizontalAlignment="Left"/>
+        </Border>
+        <Border Grid.Row="10" Grid.Column="3" >
+            <Button Background="#00CC00" FontSize="25" Foreground="White"  FontWeight="Bold" Content="运转中" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
+        </Border>
+        <Border Grid.Row="10" Grid.Column="4" >
+            <Button Name="FZgreenTotal" Background="#FFFFFF" FontSize="25" Content="22台" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
+        </Border>
+        <Border Grid.Row="10" Grid.Column="5" >
+            <Button Background="#FF0000" FontSize="25" Content="告警中" Foreground="White"  FontWeight="Bold" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
+        </Border>
+        <Border Grid.Row="10" Grid.Column="6" >
+            <Button Name="FZredTotal" Background="#FFFFFF" FontSize="25" Content="0台" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
+        </Border>
+        <Border Grid.Row="10" Grid.Column="7" >
+            <Button Background="#666666" FontSize="25" Content="停机中" Foreground="White"  FontWeight="Bold" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
+        </Border>
+        <Border Grid.Row="10" Grid.Column="8" >
+            <Button Name="FZgrayTotal" Background="#FFFFFF" FontSize="25" Content="0台" Height="60" VerticalAlignment="Center" HorizontalAlignment="Stretch"></Button>
+        </Border>
+        <Border Grid.Row="10" Grid.Column="9" Grid.ColumnSpan="9">
+            <TextBlock FontSize="35" Foreground="#FFFFFF" Text="  辅助设备监视画面" VerticalAlignment="Center" FontFamily="Arial"  FontWeight="Bold"  HorizontalAlignment="Center"/>
+        </Border>
+
+        <StackPanel Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="9" Orientation="Horizontal" >
+            <Button Name="I01" Background="#00CC00" FontSize="25" Content="AB线机器人" Width="230"  Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ></Button>
+            <Button Name="K01" Background="#00CC00" FontSize="25" Content="AB线油烟机" Width="230"  Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Button>
+            <Button Name="G01" Background="#00CC00" FontSize="25" Content="AB线液位监视" Width="230" Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Button>
+            <Button Name="L01" Background="#00CC00" FontSize="25" Content="AB线集尘机" Width="230" Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Button>
+            <Button Name="F01" Background="#00CC00" FontSize="25" Content="AB地沟输送线" Width="231" Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="9" Orientation="Horizontal" >
+            <Button Name="I02" Background="#00CC00" FontSize="25" Content="CD线机器人" Width="230"  Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"></Button>
+            <Button Name="K02" Background="#00CC00" FontSize="25" Content="CD线油烟机" Width="230"  Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"></Button>
+            <Button Name="G02" Background="#00CC00" FontSize="25" Content="CD线液位监视" Width="230" Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"></Button>
+            <Button Name="L02" Background="#00CC00" FontSize="25" Content="CD线集尘机" Width="230" Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"></Button>
+            <Button Name="F02" Background="#00CC00" FontSize="25" Content="CD地沟输送线" Width="231" Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="9" Orientation="Horizontal" >
+            <Button Name="E01" Background="#00CC00" FontSize="25" Content="溶解炉A" Width="230"  Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"></Button>
+            <Button Name="E02" Background="#00CC00" FontSize="25" Content="溶解炉B" Width="230"  Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"></Button>
+            <Button Name="E03" Background="#00CC00" FontSize="25" Content="溶解炉C" Width="230" Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"></Button>
+            <Button Name="E04" Background="#00CC00" FontSize="25" Content="溶解炉D" Width="230" Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"></Button>
+            <Button Name="F03" Background="#00CC00" FontSize="25" Content="OF返回输送线" Width="231" Foreground="#FFFFFF" FontWeight="Bold" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"></Button>
+        </StackPanel>
+
+        <Border Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="3">
+            <Button Name="M01" Background="#00CC00" FontSize="25" Content="离型剂供给泵1"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="14" Grid.Column="3" Grid.ColumnSpan="3">
+            <Button Name="M02" Background="#00CC00" FontSize="25" Content="离型剂供给泵2"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="14" Grid.Column="6" Grid.ColumnSpan="3">
+            <Button Name="M03" Background="#00CC00" FontSize="25" Content="离型剂供给泵3"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+
+        <Border Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2">
+            <Button Name="J01" Background="#00CC00" FontSize="25" Content="冷冻机1"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="15" Grid.Column="2" Grid.ColumnSpan="2">
+            <Button Name="J02" Background="#00CC00" FontSize="25" Content="冷冻机2"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="15" Grid.Column="4" Grid.ColumnSpan="2">
+            <Button Name="J03" Background="#00CC00" FontSize="25" Content="冷冻机3"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+        <Border Grid.Row="15" Grid.Column="6" Grid.ColumnSpan="3">
+            <Button Name="H01" Background="#00CC00" FontSize="25" Content="氮气发生装置"  Foreground="#FFFFFF" FontWeight="Bold"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ></Button>
+        </Border>
+
+        <Border Grid.Row="11" Grid.Column="9" Grid.ColumnSpan="9" Background="#CCCCCC">
             <TextBlock VerticalAlignment="Center"></TextBlock>
         </Border>
 
-        <Border Grid.Row="8" Grid.Column="9" Grid.ColumnSpan="2" Margin="0,0,0,0">
-            <TextBlock FontSize="20" Text="工位" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Border Grid.Row="11" Grid.Column="9" Grid.ColumnSpan="2" Margin="0,0,0,0">
+            <TextBlock FontSize="30" Text="机台编号" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         </Border>
-        <Border Grid.Row="8" Grid.Column="11" Grid.ColumnSpan="2"  Margin="0,0,0,0">
-            <TextBlock FontSize="20"  Text="问题" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Border Grid.Row="11" Grid.Column="11" Grid.ColumnSpan="2"  Margin="0,0,0,0">
+            <TextBlock FontSize="30"  Text="故障类型" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         </Border>
-        <Border Grid.Row="8" Grid.Column="13" Grid.ColumnSpan="3"  Margin="0,0,0,0">
-            <TextBlock FontSize="20" Text="发生时间" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        </Border>
-        <Border Grid.Row="8" Grid.Column="16" Grid.ColumnSpan="2">
-            <TextBlock FontSize="20"  Text="状态" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Border Grid.Row="11" Grid.Column="13" Grid.ColumnSpan="3"  Margin="0,0,0,0">
+            <TextBlock FontSize="30" Text="发生时间" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         </Border>
 
-        <Border Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="1">
-            <TextBox Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="1">
-            <TextBox Name="E01"  Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="1">
-            <TextBox Name="F01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="1">
-            <TextBox Name="G01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="1">
-            <TextBox Name="H01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="9" Grid.Column="4" Grid.ColumnSpan="1">
-            <TextBox Name="I01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="9" Grid.Column="5" Grid.ColumnSpan="1">
-            <TextBox Name="J01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="1">
-            <TextBox Name="K01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="1">
-            <TextBox Name="L01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="9" Grid.Column="8" Grid.ColumnSpan="1">
-            <TextBox Name="M01" Background="Green" FontSize="25" Text=" 01" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="1">
-            <TextBox Name="E02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="1">
-            <TextBox Name="F02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="1">
-            <TextBox Name="G02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="10" Grid.Column="4" Grid.ColumnSpan="1">
-            <TextBox Name="I02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="10" Grid.Column="5" Grid.ColumnSpan="1">
-            <TextBox Name="J02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="10" Grid.Column="6" Grid.ColumnSpan="1">
-            <TextBox Name="K02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="10" Grid.Column="7" Grid.ColumnSpan="1">
-            <TextBox Name="L02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="10" Grid.Column="8" Grid.ColumnSpan="1">
-            <TextBox Name="M02" Background="Green" FontSize="25" Text=" 02" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
+        <Border  Grid.Row="11" Grid.Column="9" Grid.RowSpan="5" Grid.ColumnSpan="2" BorderThickness="1,0,0,0" BorderBrush="Black"></Border>
+        <Border  Grid.Row="11" Grid.Column="11" Grid.RowSpan="5" Grid.ColumnSpan="2" BorderThickness="1,0,0,0" BorderBrush="Black"></Border>
+        <Border  Grid.Row="11" Grid.Column="13" Grid.ColumnSpan="3" Grid.RowSpan="5" BorderThickness="1,0,0,0" BorderBrush="Black"></Border>
+      
 
-        <Border Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="1">
-            <TextBox Name="E03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="1">
-            <TextBox Name="F03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-
-        <Border Grid.Row="11" Grid.Column="5" Grid.ColumnSpan="1">
-            <TextBox Name="J03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        <Border Grid.Row="11" Grid.Column="8" Grid.ColumnSpan="1">
-            <TextBox Name="M03" Background="Green" FontSize="25" Text=" 03" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-        
-        <Border Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="1">
-            <TextBox Name="E04" Background="Green" FontSize="25" Text=" 04" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="56" Margin="2,8,1,0" Width="43"></TextBox>
-        </Border>
-
-        <Border  Grid.Row="8" Grid.Column="9" Grid.RowSpan="5" Grid.ColumnSpan="2" BorderThickness="1,0,0,0" BorderBrush="Black"></Border>
-        <Border  Grid.Row="8" Grid.Column="11" Grid.RowSpan="5" Grid.ColumnSpan="2" BorderThickness="1,0,0,0" BorderBrush="Black"></Border>
-        <Border  Grid.Row="8" Grid.Column="13" Grid.ColumnSpan="3" Grid.RowSpan="5" BorderThickness="1,0,0,0" BorderBrush="Black"></Border>
-        <Border  Grid.Row="8" Grid.Column="16" Grid.ColumnSpan="2" Grid.RowSpan="5" BorderThickness="1,0,0,0" BorderBrush="Black"></Border>
-
-        <ListView Name="lvFiles" Grid.Row="9" Grid.RowSpan="9" Grid.Column="9" Grid.ColumnSpan="9">
+        <ListView Name="lvFiles" Grid.Row="12" Grid.RowSpan="9" Grid.Column="9" Grid.ColumnSpan="9">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
@@ -462,14 +572,10 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                             <ColumnDefinition />
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                            <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <TextBlock  FontSize="20" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Path=GW}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         <TextBlock  FontSize="20" Grid.Column="2" Grid.ColumnSpan="2" Text="{Binding Path=WT}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <TextBlock  FontSize="20" Grid.Column="4" Grid.ColumnSpan="3" Text="{Binding Path=FSSJ}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <TextBlock  FontSize="20" Grid.Column="7" Grid.ColumnSpan="2" Text="{Binding Path=ZT}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock  FontSize="20" Grid.Column="4" Grid.ColumnSpan="2" Text="{Binding Path=FSSJ}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
